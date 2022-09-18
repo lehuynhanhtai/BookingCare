@@ -1,31 +1,90 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-class UserManage extends Component {
+import './UserManage.scss';
+import { getAllUsers } from '../../services/userService';
 
-    state = {
+class UserManage extends Component
+{
+    constructor(props)
+    {
+        super(props);
+        this.state = {
+            arrUsers: []
+        }
+    }
+
+    async componentDidMount()
+    {
+        let response = await getAllUsers('ALL');
+        if (response && response.errCode === 0)
+        {
+            this.setState({
+                arrUsers: response.users
+            })
+        }
 
     }
 
-    componentDidMount() {
 
-    }
-
-
-    render() {
+    render()
+    {
+        console.log('check render', this.state)
+        let arrUsers = this.state.arrUsers;
         return (
-            <div className="text-center">Manage users</div>
+            <div className="users-container">
+                <div className='title text-center'>Manage users with BoyVIp</div>
+                <div className='users-table mt-4 mx-3'>
+                    <table id="customers">
+                        <tr>
+                            <th>Email</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Address</th>
+                            <th>Action</th>
+                        </tr>
+
+                        {
+                            arrUsers && arrUsers.map((item, index) =>
+                            {
+                                console.log('boy_v check map', item, index)
+                                return (
+                                    <tr>
+                                        <td>{item.email}</td>
+                                        <td>{item.firstName}</td>
+                                        <td>{item.lastName}</td>
+                                        <td>{item.address}</td>
+                                        <td>
+                                            <button className='btn-edit'>
+                                                <i class="fas fa-pencil-alt"></i>
+                                            </button>
+                                            <button className='btn-delete'>
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                )
+                            })
+                        }
+
+
+
+                    </table>
+                </div>
+            </div>
         );
     }
 
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = state =>
+{
     return {
     };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch =>
+{
     return {
     };
 };
