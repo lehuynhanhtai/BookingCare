@@ -10,7 +10,11 @@ class ModalUser extends Component
     {
         super(props);
         this.state = {
-
+            email: '',
+            password: '',
+            firstName: '',
+            lastName: '',
+            address: ''
         }
     }
     componentDidMount()
@@ -22,10 +26,44 @@ class ModalUser extends Component
         this.props.toggleFromParent();
     }
 
+    handleOnchangeInput = (event, id) =>
+    {
+        let copyState = { ...this.state };
+        copyState[id] = event.target.value;
+        this.setState({
+            ...copyState
+        });
+        // console.log(event.target.value, id);
+    }
+
+    checkValideInput = () =>
+    {
+        let isValit = true;
+        let arrInput = ['email', 'password', 'firstName', 'lastName', 'address'];
+        for (let i = 0; i < arrInput.length; i++)
+        {
+            if (!this.state[arrInput[i]])
+            {
+                isValit = false;
+                alert('Missing Parameter: ' + arrInput[i]);
+                break;
+            }
+        }
+        return isValit;
+    }
+
+    handleAddNewUser = () =>
+    {
+        let isValit = this.checkValideInput();
+        if (isValit === true)
+        {
+            //call api create modal
+            this.props.createNewUser(this.state);
+        }
+    }
+
     render()
     {
-        console.log('check child props', this.props);
-        console.log("check child open modal", this.props.isOpen);
         return (
             <Modal
                 isOpen={this.props.isOpen}
@@ -38,27 +76,42 @@ class ModalUser extends Component
                     <div className='modal-user-body'>
                         <div className='input-container'>
                             <label>Email</label>
-                            <input type='text' />
+                            <input type='text'
+                                onChange={(event) => { this.handleOnchangeInput(event, "email") }}
+                                value={this.state.email}
+                            />
                         </div>
                         <div className='input-container'>
                             <label>Password</label>
-                            <input type='password' />
+                            <input type='password'
+                                onChange={(event) => { this.handleOnchangeInput(event, "password") }}
+                                value={this.state.password}
+                            />
                         </div>
                     </div>
                     <div className='modal-user-body'>
                         <div className='input-container'>
                             <label>First name</label>
-                            <input type='text' />
+                            <input type='text'
+                                onChange={(event) => { this.handleOnchangeInput(event, "firstName") }}
+                                value={this.state.firstName}
+                            />
                         </div>
                         <div className='input-container'>
                             <label>Last name</label>
-                            <input type='text' />
+                            <input type='text'
+                                onChange={(event) => { this.handleOnchangeInput(event, "lastName") }}
+                                value={this.state.lastName}
+                            />
                         </div>
                     </div>
                     <div className='modal-user-body'>
                         <div className='input-container w-100'>
                             <label>Address</label>
-                            <input type='text' />
+                            <input type='text'
+                                onChange={(event) => { this.handleOnchangeInput(event, "address") }}
+                                value={this.state.address}
+                            />
                         </div>
                     </div>
 
@@ -66,7 +119,10 @@ class ModalUser extends Component
 
                 </ModalBody>
                 <ModalFooter>
-                    <Button className='px-3' color="primary" onClick={() => { this.toggle() }}>Save</Button>{' '}
+                    <Button
+                        className='px-3'
+                        color="primary"
+                        onClick={() => { this.handleAddNewUser() }}>Save</Button>{' '}
                     <Button className='px-3' color="secondary" onClick={() => { this.toggle() }}>Close</Button>
                 </ModalFooter>
             </Modal>
