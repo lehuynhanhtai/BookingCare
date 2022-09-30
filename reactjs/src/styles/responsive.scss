@@ -1,0 +1,26 @@
+// Extra small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap
+
+// Small devices (landscape phones, 576px and up)
+@media (max-width: 739px) {
+    .header-logo {
+        display: none;
+    }
+
+    // .icon-bars {
+    //     display: inline-block;
+    //     margin: auto;
+    // }
+
+    .center-describe {
+        display: none;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 740px) and (max-width: 1023px) {
+    .center-describe {
+        overflow: hidden;
+    }
+
+}
