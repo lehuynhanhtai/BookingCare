@@ -1,8 +1,8 @@
 .home-header-container {
-    height: 60px;
+    height: 70px;
 
     .left-content {
-        height: 60px;
+        height: 70px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -22,19 +22,27 @@
     }
 
     .center-content {
-        height: 60px;
+        height: 70px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-
     }
 
     .right-content {
-        height: 60px;
+        height: 70px;
         display: flex;
         justify-content: center;
         align-items: center;
 
+        .support {
+            margin-right: 8px;
+        }
+
+        .swichLang {
+            color: #49bce2;
+            font-weight: 600;
+            cursor: pointer;
+        }
     }
 
 }
@@ -51,8 +59,8 @@
     flex-direction: column;
 
     .content-up {
-        border: 1px solid red;
-        height: 50%;
+        height: 65%;
+        background-image: linear-gradient(rgba(126, 126, 126, 0.25), rgba(255, 255, 255, 0.1));
 
         .header-title-top {
             text-align: center;
@@ -97,25 +105,26 @@
     }
 
     .content-down {
-        border: 2px solid green;
-        height: 50%;
 
-
+        height: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background-image:
+            linear-gradient(rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.9),
+                rgba(255, 255, 255, 1));
 
         .header-option {
-            display: flex;
-            justify-content: center;
             gap: 50px;
-            margin-bottom: 0;
-            margin-top: 12%;
+            display: flex;
 
             .option-child {
                 width: 110px;
                 text-align: center;
 
-
                 .icon-child {
-                    background-color: #c9c9c9;
+                    background-color: #f7f6f6;
                     border-radius: 50%;
                     width: 50px;
                     height: 50px;
@@ -123,6 +132,7 @@
                     font-size: 28px;
                     margin: 0 auto;
                     color: #49bce2;
+                    box-shadow: 0 2px 4px #aaa;
                 }
 
                 .text-child {

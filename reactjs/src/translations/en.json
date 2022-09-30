@@ -1,4 +1,20 @@
 {
+    "homeheader": {
+        "speciality": "Specialty",
+        "searchDoctor": "Find doctors by specialty",
+        "healthFacilities": "Health facilities",
+        "chooseHospital": "Choose clinic hospital",
+        "doctor": "Doctor",
+        "goodDoctor": "Choose a good doctor",
+        "checkupPackage": "Checkup package",
+        "generalHealthCheck": "General health check-up",
+        "support": "Support"
+    },
+    "banner": {
+        "titleBanner1": "HEALTH FOUNDATION",
+        "titleBanner2": "COMPLICATE HEALTH CARE",
+        "placehodelSearch": "Look for a condition or sign of illness"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",

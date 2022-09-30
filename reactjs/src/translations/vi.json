@@ -1,4 +1,20 @@
 {
+    "homeheader": {
+        "speciality": "Chuyên khoa",
+        "searchDoctor": "Tìm bác sĩ theo chuyên khoa",
+        "healthFacilities": "Cơ sở y tế",
+        "chooseHospital": "Chọn bệnh viện phòng khám",
+        "doctor": "Bác sĩ",
+        "goodDoctor": "Chọn bác sĩ giỏi",
+        "checkupPackage": "Gói khám",
+        "generalHealthCheck": "Khám sức khỏe tổng quát",
+        "support": "Hỗ trợ"
+    },
+    "banner": {
+        "titleBanner1": "NỀN TẢNG Y TẾ",
+        "titleBanner2": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
+        "placehodelSearch": "Tìm kiếm tình trạng hoặc dấu hiệu của bệnh"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",
