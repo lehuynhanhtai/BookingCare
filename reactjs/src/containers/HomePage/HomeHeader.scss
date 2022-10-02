@@ -41,7 +41,34 @@
         .swichLang {
             color: #49bce2;
             font-weight: 600;
-            cursor: pointer;
+
+            .language-vi {
+                cursor: pointer;
+                opacity: 0.5;
+
+                &.active {
+                    opacity: 1;
+                    color: #f7d800;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+
+            .language-en {
+                cursor: pointer;
+                opacity: 0.5;
+
+                &.active {
+                    opacity: 1;
+                    color: #f7d800;
+                }
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
         }
     }
 

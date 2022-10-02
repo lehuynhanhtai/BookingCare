@@ -13,7 +13,13 @@
     "banner": {
         "titleBanner1": "HEALTH FOUNDATION",
         "titleBanner2": "COMPLICATE HEALTH CARE",
-        "placehodelSearch": "Look for a condition or sign of illness"
+        "placehodelSearch": "Look for a condition or sign of illness",
+        "textChild1": "Specialist examination",
+        "textChild2": "Remote examination",
+        "textChild3": "General examination",
+        "textChild4": "Medical test",
+        "textChild5": "Mental health",
+        "textChild6": "Dental examination"
     },
     "common": {
         "add": "Add",

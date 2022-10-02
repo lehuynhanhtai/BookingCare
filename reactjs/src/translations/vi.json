@@ -13,7 +13,13 @@
     "banner": {
         "titleBanner1": "NỀN TẢNG Y TẾ",
         "titleBanner2": "CHĂM SÓC SỨC KHỎE TOÀN DIỆN",
-        "placehodelSearch": "Tìm kiếm tình trạng hoặc dấu hiệu của bệnh"
+        "placehodelSearch": "Tìm kiếm tình trạng hoặc dấu hiệu của bệnh",
+        "textChild1": "Khám chuyên khoa",
+        "textChild2": "Khám từ xa",
+        "textChild3": "Khám tổng quát",
+        "textChild4": "Xét nghiệm y học",
+        "textChild5": "Sức khỏe tinh thần",
+        "textChild6": "Khám nha khoa"
     },
     "common": {
         "add": "Thêm",

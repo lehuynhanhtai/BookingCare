@@ -3,13 +3,19 @@ import { connect } from 'react-redux';
 import './HomeHeader.scss'
 import '../../styles/responsive.scss'
 import { FormattedMessage } from 'react-intl';
-
+import { LANGUAGES } from '../../utils';
+import { changeLanguageApp } from '../../store/actions/appActions';
 
 class HomeHeader extends Component
 {
+    changeLanguage = (language) =>
+    {
+        this.props.changeLanguageAppRedux(language)
+    }
 
     render()
     {
+        let language = this.props.language;
         return (
             <React.Fragment>
                 <div className='home-header-container'>
@@ -45,9 +51,9 @@ class HomeHeader extends Component
                                 <div className='right-content'>
                                     <div className='support'><i className="fas fa-question-circle mx-1"></i><b><FormattedMessage id="homeheader.support" /></b></div>
                                     <div className='swichLang'>
-                                        <span className='language-vi'>VN</span>
-                                        /
-                                        <span className='language-en'>EN</span>
+                                        <span onClick={() => this.changeLanguage(LANGUAGES.VI)} className={language === LANGUAGES.VI ? 'language-vi active' : 'language-vi'}>VI</span>
+                                        <span className='mx-1'>/</span>
+                                        <span onClick={() => this.changeLanguage(LANGUAGES.EN)} className={language === LANGUAGES.EN ? 'language-en active' : 'language-en'}>EN</span>
                                     </div>
                                 </div>
                             </div>
@@ -72,7 +78,7 @@ class HomeHeader extends Component
                                     <i className='far fa-hospital'></i>
                                 </div>
                                 <div className='text-child'>
-                                    Khám chuyên khoa
+                                    <FormattedMessage id="banner.textChild1" />
                                 </div>
                             </div>
                             <div className='option-child'>
@@ -80,7 +86,7 @@ class HomeHeader extends Component
                                     <i className='fas fa-mobile-alt'></i>
                                 </div>
                                 <div className='text-child'>
-                                    Khám từ xa
+                                    <FormattedMessage id="banner.textChild2" />
                                 </div>
                             </div>
                             <div className='option-child'>
@@ -88,7 +94,7 @@ class HomeHeader extends Component
                                     <i className='fas fa-procedures'></i>
                                 </div>
                                 <div className='text-child'>
-                                    Khám tổng quát
+                                    <FormattedMessage id="banner.textChild3" />
                                 </div>
                             </div>
                             <div className='option-child'>
@@ -96,16 +102,16 @@ class HomeHeader extends Component
                                     <i className='fas fa-flask'></i>
                                 </div>
                                 <div className='text-child'>
-                                    Xét nghiệm y học
+                                    <FormattedMessage id="banner.textChild4" />
                                 </div>
                             </div>
                             <div className='option-child'>
                                 <div className='icon-child'>
                                     <i className='fas fa-user-md'></i>
-                                    <i class="fas fa-yin-yang"></i>
+                                    <i className="fas fa-yin-yang"></i>
                                 </div>
                                 <div className='text-child'>
-                                    Sức khỏe tinh thần
+                                    <FormattedMessage id="banner.textChild5" />
                                 </div>
                             </div>
                             <div className='option-child'>
@@ -113,7 +119,7 @@ class HomeHeader extends Component
                                     <i className='fas fa-user-md'></i>
                                 </div>
                                 <div className='text-child'>
-                                    Khám nha khoa
+                                    <FormattedMessage id="banner.textChild6" />
                                 </div>
                             </div>
                         </div>
@@ -138,6 +144,7 @@ const mapStateToProps = state =>
 const mapDispatchToProps = dispatch =>
 {
     return {
+        changeLanguageAppRedux: (language) => dispatch(changeLanguageApp(language))
     };
 };
 
