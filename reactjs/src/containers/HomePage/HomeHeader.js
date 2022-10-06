@@ -108,7 +108,6 @@ class HomeHeader extends Component
                             <div className='option-child'>
                                 <div className='icon-child'>
                                     <i className='fas fa-user-md'></i>
-                                    <i className="fas fa-yin-yang"></i>
                                 </div>
                                 <div className='text-child'>
                                     <FormattedMessage id="banner.textChild5" />
