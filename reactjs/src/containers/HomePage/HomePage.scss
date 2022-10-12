@@ -34,11 +34,15 @@
 .section-share {
     &.section-specialty {
         background: #f5f5f5;
-
     }
 
     &.section-outstanding-doctor {
         background: #f5f5f5;
+    }
+
+    &.section-about {
+        height: auto;
+        margin: 0 150px;
     }
 
     .section-body {
@@ -137,4 +141,42 @@
     }
 
 
+}
+
+.home-footer {
+    text-align: center;
+    padding-top: 8px;
+
+    a {
+        text-decoration: none;
+    }
+}
+
+
+.section-about-header {
+    padding: 10px 10px 10px 0;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.section-about {
+    .section-about-header {
+        padding: 10px 10px 10px 0;
+        font-size: 22px;
+        font-weight: 600;
+    }
+
+    .section-about-content {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+
+        .content-left {
+            width: 60%;
+        }
+
+        .content-right {
+            width: 40%;
+        }
+    }
 }

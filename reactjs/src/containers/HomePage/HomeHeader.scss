@@ -1,5 +1,9 @@
 .home-header-container {
     height: 70px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1000;
 
     .left-content {
         height: 70px;
