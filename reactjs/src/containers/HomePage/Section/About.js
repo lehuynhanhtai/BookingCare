@@ -17,9 +17,9 @@ class About extends Component
                         <iframe width="100%" height="500px"
                             src="https://www.youtube.com/embed/q-1FuU37zvA"
                             title="SƠN TÙNG M-TP | SKY DECADE | Cơn Mưa Xa Dần"
-                            frameborder="0"
+                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
+                            allowFullScreen>
                         </iframe>
                     </div>
                     <div className='content-right'>
