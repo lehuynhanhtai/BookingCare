@@ -1,33 +1,39 @@
 import actionTypes from '../actions/actionTypes';
+import { getAllcodeService } from '../../services/userService';
 
 const initialState = {
-    isLoggedIn: false,
-    adminInfo: null
+    genders: [],
+    roloes: [],
+    positions: []
 }
 
-const appReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case actionTypes.ADMIN_LOGIN_SUCCESS:
+const adminReducer = (state = initialState, action) =>
+{
+    switch (action.type)
+    {
+        case actionTypes.FETCH_GENDER_START:
+            console.log('hoidanit fire fetch gender start', action)
             return {
-                ...state,
-                isLoggedIn: true,
-                adminInfo: action.adminInfo
+                ...state
             }
-        case actionTypes.ADMIN_LOGIN_FAIL:
+        case actionTypes.FETCH_GENDER_SUCCESS:
+            let copyState = { ...state };
+            copyState.genders = action.data;
+            console.log('hoidanit fire fetch gender SS', copyState)
+
             return {
-                ...state,
-                isLoggedIn: false,
-                adminInfo: null
+                ...copyState
             }
-        case actionTypes.PROCESS_LOGOUT:
+        case actionTypes.FETCH_GENDER_FAILED:
+            console.log('hoidanit fire fetch gender FA', action)
             return {
-                ...state,
-                isLoggedIn: false,
-                adminInfo: null
+                ...state
             }
+
+
         default:
             return state;
     }
 }
 
-export default appReducer;
+export default adminReducer;
