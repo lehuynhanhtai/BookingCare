@@ -2,8 +2,9 @@ import actionTypes from '../actions/actionTypes';
 import { getAllcodeService } from '../../services/userService';
 
 const initialState = {
+    isLoadingGender: false,
     genders: [],
-    roloes: [],
+    roles: [],
     positions: []
 }
 
@@ -11,25 +12,47 @@ const adminReducer = (state = initialState, action) =>
 {
     switch (action.type)
     {
+        //gender
         case actionTypes.FETCH_GENDER_START:
-            console.log('hoidanit fire fetch gender start', action)
-            return {
-                ...state
-            }
-        case actionTypes.FETCH_GENDER_SUCCESS:
             let copyState = { ...state };
-            copyState.genders = action.data;
-            console.log('hoidanit fire fetch gender SS', copyState)
-
+            copyState.isLoadingGender = true;
             return {
                 ...copyState
             }
-        case actionTypes.FETCH_GENDER_FAILED:
-            console.log('hoidanit fire fetch gender FA', action)
+        case actionTypes.FETCH_GENDER_SUCCESS:
+            state.genders = action.data;
+            state.isLoadingGender = false;
             return {
                 ...state
             }
-
+        case actionTypes.FETCH_GENDER_FAILED:
+            state.isLoadingGender = false;
+            state.genders = [];
+            return {
+                ...state
+            }
+        //position
+        case actionTypes.FETCH_POSITION_SUCCESS:
+            state.positions = action.data;
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_POSITION_FAILED:
+            state.positions = [];
+            return {
+                ...state
+            }
+        //ROLE
+        case actionTypes.FETCH_ROLE_SUCCESS:
+            state.roles = action.data;
+            return {
+                ...state
+            }
+        case actionTypes.FETCH_ROLE_FAILED:
+            state.roles = [];
+            return {
+                ...state
+            }
 
         default:
             return state;
