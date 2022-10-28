@@ -1,4 +1,4 @@
-import { getAllcodeService } from '../../services/userService';
+import { getAllcodeService, createNewUserService } from '../../services/userService';
 import actionTypes from './actionTypes';
 
 // export const fetchGenderStart = () => ({
@@ -103,3 +103,37 @@ export const fetchRoleStart = () =>
         }
     }
 }
+
+//Create User
+
+export const saveUserSuccess = () => ({
+    type: 'CREATE_USER_SUCCES'
+})
+
+export const saveUserFailed = () => ({
+    type: 'CREATE_USER_FAILED'
+})
+
+export const createNewUser = (data) =>
+{
+    return async (dispatch, getState) =>
+    {
+        try
+        {
+            let res = await createNewUserService(data);
+            console.log('hoidanit check create user redux: ', res)
+            if (res && res.errCode === 0)
+            {
+                dispatch(saveUserSuccess());
+            } else
+            {
+                dispatch(saveUserFailed());
+            }
+        } catch (e)
+        {
+            dispatch(saveUserFailed());
+            console.log('saveUserFailed error', e)
+        }
+    }
+}
+
