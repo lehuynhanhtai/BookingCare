@@ -12,7 +12,7 @@
         "welcome": "Welcome, "
     },
     "banner": {
-        "titleBanner1": "HEALTH FOUNDATION",
+        "titleBanner1": "MEDICAL PLATFORM",
         "titleBanner2": "COMPLICATE HEALTH CARE",
         "placehodelSearch": "Look for a condition or sign of illness",
         "textChild1": "Specialist examination",
@@ -51,5 +51,9 @@
         "image": "Avatar",
         "save": "Save",
         "edit": "Edit user"
+    },
+    "homepage": {
+        "outstanding-doctor": "Outstanding Doctor of the Week",
+        "more-infor": "More Information"
     }
 }
