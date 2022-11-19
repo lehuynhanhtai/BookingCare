@@ -1,0 +1,27 @@
+.detail-doctor-container {
+    border: 1px solid red;
+    height: 500px;
+
+    .content-left {
+        height: 120px;
+        width: 120px;
+        margin: 10px auto 10px auto;
+        background: center center no-repeat;
+        border-radius: 50%;
+    }
+
+    .content-right {
+        border: 1px solid rgb(50, 50, 3);
+        width: 100%;
+
+        .up {
+            font-size: 25px;
+            font-weight: 600;
+            padding-top: 15px;
+        }
+
+        .down {
+            padding-top: 5px;
+        }
+    }
+}

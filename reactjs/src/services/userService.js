@@ -51,6 +51,11 @@ const saveDetailDoctorService = (data) =>
 
 }
 
+const getDetailInforDoctor = (inputId) =>
+{
+    return axios.get(`/api/get-detail-doctor-by-id?id=${inputId}`)
+}
+
 export
 {
     handleLoginApi,
@@ -61,5 +66,6 @@ export
     getAllcodeService,
     getTopDoctorHomeService,
     getAllDoctors,
-    saveDetailDoctorService
+    saveDetailDoctorService,
+    getDetailInforDoctor
 }
