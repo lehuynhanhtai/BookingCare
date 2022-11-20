@@ -33,8 +33,10 @@ class OutStandingDoctor extends Component
 
     handleViewDetailDoctor = (doctor) =>
     {
-        console.log('channel view infor: ', doctor)
-        this.props.history.push(`/detail-doctor/${doctor.id}`)
+        if (this.props.history)
+        {
+            this.props.history.push(`/detail-doctor/${doctor.id}`)
+        }
     }
 
     render()
@@ -75,7 +77,6 @@ class OutStandingDoctor extends Component
                                                         style={{ backgroundImage: `url(${imageBase64})` }}
                                                     />
                                                 </div>
-                                                <div>Ảnh đại diện bác sĩ 1</div>
                                                 <div className='position text-center'>
                                                     <div>{language === LANGUAGES.VI ? nameVi : nameEn}</div>
                                                     <div>Cơ xương khớp</div>
