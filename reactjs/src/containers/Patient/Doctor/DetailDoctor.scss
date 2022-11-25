@@ -27,7 +27,13 @@
             }
         }
 
-        .schedule-doctor {}
+        .schedule-doctor {
+            border: 1px solid red;
+
+            .content-left {
+                width: 100%;
+            }
+        }
 
         .detail-infor {}
     }

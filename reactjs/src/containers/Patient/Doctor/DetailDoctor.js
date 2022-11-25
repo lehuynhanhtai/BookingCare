@@ -4,6 +4,7 @@ import HomeHeader from '../../HomePage/HomeHeader';
 import './DetailDoctor.scss';
 import { getDetailInforDoctor } from '../../../services/userService';
 import { LANGUAGES } from '../../../utils';
+import DoctorSchedule from './DoctorSchedule';
 
 class DetailDoctor extends Component
 {
@@ -85,7 +86,22 @@ class DetailDoctor extends Component
                                     </div>
                                 </div>
                             </div>
-                            <div className='schedule-doctor'></div>
+                            <div className='schedule-doctor'>
+                                <div className='row'>
+                                    <div className='col-6'>
+                                        <div className='content-left'>
+                                            <DoctorSchedule
+                                                doctorIdFromParent={detailDoctor && detailDoctor.id ? detailDoctor.id : -1}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className='col-6'>
+                                        <div className='content-right'>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div className='detail-infor my-4'>
                                 {
                                     detailDoctor &&
