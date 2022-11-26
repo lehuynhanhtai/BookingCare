@@ -12,7 +12,8 @@ class DetailDoctor extends Component
     {
         super(props);
         this.state = {
-            detailDoctor: {}
+            detailDoctor: {},
+            currentDoctorId: -1
         }
     }
 
@@ -21,13 +22,16 @@ class DetailDoctor extends Component
         if (this.props.match && this.props.match.params && this.props.match.params.id)
         {
             let id = this.props.match.params.id;
-            let res = await getDetailInforDoctor(id);
-            console.log('hoidanit channel: res', res)
+            this.setState({
+                currentDoctorId: id
+            })
 
+            let res = await getDetailInforDoctor(id);
             if (res && res.errCode === 0)
             {
                 this.setState({
-                    detailDoctor: res.data
+                    detailDoctor: res.data,
+                    currentDoctorId: id
                 })
             }
 
@@ -87,21 +91,17 @@ class DetailDoctor extends Component
                                 </div>
                             </div>
                             <div className='schedule-doctor'>
-                                <div className='row'>
-                                    <div className='col-6'>
-                                        <div className='content-left'>
-                                            <DoctorSchedule
-                                                doctorIdFromParent={detailDoctor && detailDoctor.id ? detailDoctor.id : -1}
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className='col-6'>
-                                        <div className='content-right'>
+                                <div className='content-left'>
+                                    <DoctorSchedule
+                                        doctorIdFromParent={this.state.currentDoctorId}
+                                    />
+                                </div>
 
-                                        </div>
-                                    </div>
+                                <div className='content-right'>
+
                                 </div>
                             </div>
+
                             <div className='detail-infor my-4'>
                                 {
                                     detailDoctor &&
@@ -116,8 +116,6 @@ class DetailDoctor extends Component
 
                             </div>
                         </div>
-
-
                     </div>
                 </div>
 
