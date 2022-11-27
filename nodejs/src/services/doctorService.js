@@ -1,6 +1,6 @@
 import db from "../models/index";
 require('dotenv').config();
-import _, { reject } from 'lodash';
+import _ from 'lodash';
 
 const MAX_NUMBER_SCHEDULE = process.env.MAX_NUMBER_SCHEDULE;
 
@@ -68,7 +68,14 @@ let saveDetailInformation = (inputData) =>
         try
         {
             if (!inputData.doctorId || !inputData.contentHTML
-                || !inputData.contentMarkdown || !inputData.action)
+                || !inputData.contentMarkdown || !inputData.action
+
+                || !inputData.selectPrice || !inputData.selectPayment
+                || !inputData.selectProvince
+
+                || !inputData.nameClinic || !inputData.addressClinic
+                || !inputData.note
+            )
             {
                 resolve({
                     errCode: 1,
@@ -76,6 +83,7 @@ let saveDetailInformation = (inputData) =>
                 })
             } else
             {
+                //upsert to markdown table
                 if (inputData.action === 'CREATE')
                 {
                     await db.Markdown.create({
@@ -96,8 +104,45 @@ let saveDetailInformation = (inputData) =>
                         doctorMarkdown.contentHTML = inputData.contentHTML;
                         doctorMarkdown.contentMarkdown = inputData.contentMarkdown;
                         doctorMarkdown.description = inputData.description;
+                        doctorMarkdown.updateAt = new Date();
                         await doctorMarkdown.save()
                     }
+                }
+
+                //upsert to doctor_info table
+                let doctorInfor = await db.Doctor_infor.findOne({
+                    where: {
+                        doctorId: inputData.doctorId,
+                    },
+
+                    raw: false
+                })
+
+                if (doctorInfor)
+                {
+                    //update
+                    doctorInfor.doctorId = inputData.doctorId;
+                    doctorInfor.priceId = inputData.selectPrice;
+                    doctorInfor.provinceId = inputData.selectProvince;
+                    doctorInfor.paymentId = inputData.selectPayment;
+                    doctorInfor.nameClinic = inputData.nameClinic;
+                    doctorInfor.addressClinic = inputData.addressClinic;
+                    doctorInfor.note = inputData.note;
+
+                    await doctorInfor.save()
+
+                } else
+                {
+                    //create
+                    await db.Doctor_infor.create({
+                        doctorId: inputData.doctorId,
+                        priceId: inputData.selectPrice,
+                        provinceId: inputData.selectProvince,
+                        paymentId: inputData.selectPayment,
+                        nameClinic: inputData.nameClinic,
+                        addressClinic: inputData.addressClinic,
+                        note: inputData.note,
+                    })
                 }
 
 
