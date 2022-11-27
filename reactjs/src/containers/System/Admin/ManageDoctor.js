@@ -167,15 +167,53 @@ class ManageDoctor extends Component
     handleChangeSelect = async (selectedOption) =>
     {
         this.setState({ selectedOption });
+        let { listPrice, listPayment, listProvince } = this.state;
+
         let res = await getDetailInforDoctor(selectedOption.value);
         if (res && res.errCode === 0 && res.data && res.data.Markdown)
         {
             let markdown = res.data.Markdown;
+
+            let addressClinic = '', nameClinic = '', note = '',
+                paymentId = '', priceId = '', provinceId = '',
+                selectPrice = '', selectPayment = '', selectProvince = '';
+
+            if (res.data.Doctor_infor)
+            {
+                addressClinic = res.data.Doctor_infor.addressClinic
+                nameClinic = res.data.Doctor_infor.nameClinic
+                note = res.data.Doctor_infor.note
+
+                paymentId = res.data.Doctor_infor.paymentId
+                priceId = res.data.Doctor_infor.priceId
+                provinceId = res.data.Doctor_infor.provinceId
+
+
+                selectPrice = listPrice.find(item =>
+                {
+                    return item && item.value === priceId
+                })
+                selectPayment = listPayment.find(item =>
+                {
+                    return item && item.value === paymentId
+                })
+                selectProvince = listProvince.find(item =>
+                {
+                    return item && item.value === provinceId
+                })
+            }
+
             this.setState({
                 contentHTML: markdown.contentHTML,
                 contentMarkdown: markdown.contentMarkdown,
                 description: markdown.description,
-                hasOldData: true
+                hasOldData: true,
+                addressClinic: addressClinic,
+                nameClinic: nameClinic,
+                note: note,
+                selectPrice: selectPrice,
+                selectPayment: selectPayment,
+                selectProvince: selectProvince
             })
         } else
         {
@@ -183,7 +221,10 @@ class ManageDoctor extends Component
                 contentHTML: '',
                 contentMarkdown: '',
                 description: '',
-                hasOldData: false
+                hasOldData: false,
+                addressClinic: '',
+                nameClinic: '',
+                note: ''
             })
         }
         console.log("check value selectedOption: ", res)
