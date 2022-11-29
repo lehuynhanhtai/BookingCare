@@ -66,7 +66,7 @@ class DetailDoctor extends Component
                             <div className='row'>
                                 <div className='col-2'>
                                     <div className='content-left'
-                                        style={{ backgroundImage: `url(${detailDoctor.image})` }}
+                                        style={{ backgroundImage: `url(${detailDoctor && detailDoctor.image ? detailDoctor.image : ''})` }}
                                     >
 
                                     </div>
