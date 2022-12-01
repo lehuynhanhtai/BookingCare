@@ -8,7 +8,10 @@ let postBookAppointment = (data) =>
     {
         try
         {
-            if (!data.email || !data.doctorId || !data.timeType || !data.date)
+            if (!data.email || !data.doctorId || !data.timeType || !data.date
+                || !data.fullName
+
+            )
             {
                 resolve({
                     errCode: 1,
@@ -16,11 +19,13 @@ let postBookAppointment = (data) =>
                 })
             } else
             {
+
                 await emailService.sendSimpleEmail({
                     reciverEmail: data.email,
-                    patientName: 'Hoi dan it patient name',
-                    time: '8:00 - 9:00 Chủ nhật/2021',
-                    doctorName: 'BoyV',
+                    patientName: data.fullName,
+                    time: data.timeString,
+                    doctorName: data.doctorName,
+                    language: data.language,
                     redirectLink: 'https://www.w3schools.com/'
                 })
 
