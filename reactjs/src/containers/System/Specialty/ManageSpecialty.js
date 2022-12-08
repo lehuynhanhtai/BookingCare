@@ -78,6 +78,12 @@ class ManageSpecialty extends Component
         if (res && res.errCode === 0)
         {
             toast.success('Add new specialty succeeds')
+            this.setState({
+                name: '',
+                imageBase64: '',
+                descriptionHTML: '',
+                descriptionMarkdown: ''
+            })
         } else
         {
             toast.error('Something wrongs ...')
