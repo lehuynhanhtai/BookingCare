@@ -38,7 +38,7 @@ let postInforDoctor = async (req, res) =>
 {
     try
     {
-        let response = await doctorService.saveDetailInformation(req.body);
+        let response = await doctorService.saveDetailInforDoctor(req.body);
         return res.status(200).json(response);
     } catch (e)
     {
