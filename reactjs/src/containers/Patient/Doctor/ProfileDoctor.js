@@ -80,7 +80,6 @@ class ProfileDoctor extends Component
     {
         let { dataProfile } = this.state;
         let { language, isShowDescriptionDoctor, dataTime } = this.props;
-        console.log('check state profile doctor datatime: ', dataTime)
 
         let nameVi = '', nameEn = '';
         if (dataProfile && dataProfile.positionData)
