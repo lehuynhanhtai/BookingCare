@@ -2,13 +2,34 @@
 
 
     .description-specialty {
-        border: 1px solid red;
+        padding: 10px;
+        background-color: white !important;
+        margin: 15px 0;
+
+        h1,
+        h2,
+        h3 {
+            font-size: 16px;
+            font-weight: 600;
+        }
     }
 
-    .search-sp-doctor {}
+    .search-sp-doctor {
+        select {
+            height: 30px;
+            padding: 5px 8px;
+            border: none;
+            outline: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    }
 
     .detail-specialty-body {
-        margin: 0 300px;
+        padding: 0 300px;
+        background: #eeee;
+        display: flex;
+        flex-direction: column;
     }
 
     .each-doctor {
