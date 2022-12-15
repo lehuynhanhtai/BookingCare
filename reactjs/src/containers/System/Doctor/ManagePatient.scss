@@ -20,13 +20,32 @@
 
             td,
             th {
-                border: 1px solid #dddddd;
+                border: 1px solid #010000;
                 text-align: left;
                 padding: 8px;
             }
 
             tr:nth-child(even) {
                 background-color: #dddddd;
+            }
+
+            button {
+                border: none;
+                outline: none;
+                cursor: pointer;
+            }
+
+            .mp-btn-confirm {
+                margin-right: 10px;
+                height: 30px;
+                border-radius: 3px;
+                background-color: rgb(35, 133, 35);
+            }
+
+            .mp-btn-remety {
+                height: 30px;
+                border-radius: 3px;
+                background-color: orange;
             }
         }
     }
