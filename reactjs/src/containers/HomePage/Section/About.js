@@ -14,16 +14,23 @@ class About extends Component
                 </div>
                 <div className='section-about-content'>
                     <div className='content-left'>
-                        <iframe width="100%" height="500px"
-                            src="https://www.youtube.com/embed/q-1FuU37zvA"
-                            title="SƠN TÙNG M-TP | SKY DECADE | Cơn Mưa Xa Dần"
+                        <iframe width="90%" height="500px"
+                            src="https://www.youtube-nocookie.com/embed/FyDQljKtWnI?autoplay=1"
+                            title="Cà phê khởi nghiệp VTV1 | BOOKINGCARE | Hệ thống đặt lịch khám bệnh"
                             frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowFullScreen>
                         </iframe>
                     </div>
                     <div className='content-right'>
-                        sss
+                        <div className='suckhoedoisong'></div>
+                        <div className='vtv1'></div>
+                        <div className='ictnews'></div>
+                        <div className='vnexpress'></div>
+                        <div className='vtcnews'></div>
+                        <div className='cuccongnghethongtin'></div>
+                        <div className='vtcnews'></div>
+                        <div className='vtv1'></div>
                     </div>
                 </div>
             </div>

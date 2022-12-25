@@ -147,14 +147,6 @@
 
 }
 
-.home-footer {
-    text-align: center;
-    padding-top: 8px;
-
-    a {
-        text-decoration: none;
-    }
-}
 
 
 .section-about-header {
@@ -181,6 +173,59 @@
 
         .content-right {
             width: 40%;
+            height: 170px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .suckhoedoisong {
+                background: url(../../assets/about/suckhoedoisong.png);
+                background-repeat: no-repeat;
+                width: 162px;
+                height: 50px;
+                background-size: 142px 30px;
+            }
+
+            .vtv1 {
+                background: url(../../assets/about/vtv1.png);
+                background-repeat: no-repeat;
+                width: 162px;
+                height: 50px;
+                background-size: 142px 30px;
+            }
+
+            .ictnews {
+                background: url(../../assets/about/ictnews.png);
+                background-repeat: no-repeat;
+                width: 162px;
+                height: 50px;
+                background-size: 142px 30px;
+            }
+
+            .vnexpress {
+                background: url(../../assets/about/vnexpress.png);
+                background-repeat: no-repeat;
+                width: 162px;
+                height: 50px;
+                background-size: 142px 30px;
+            }
+
+            .vtcnews {
+                background: url(../../assets/about/vtcnews.png);
+                background-repeat: no-repeat;
+                width: 151px;
+                height: 50px;
+                background-size: 131px 30px;
+                background-color: #a3171e;
+            }
+
+            .cuccongnghethongtin {
+                background: url(../../assets/about/cuc-cong-nghe-thong-tin-bo-y-te-2.png);
+                background-repeat: no-repeat;
+                width: 127px;
+                height: 50px;
+                background-size: 107px 40px;
+            }
         }
     }
 }

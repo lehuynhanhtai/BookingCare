@@ -204,7 +204,6 @@ class ManagePatient extends Component
                         closeRemedyModal={this.closeRemedyModal}
                         sendRemedy={this.sendRemedy}
                     >
-
                     </RemedyModal>
 
                 </LoadingOverlay>

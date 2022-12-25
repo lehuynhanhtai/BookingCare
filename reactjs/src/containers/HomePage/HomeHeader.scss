@@ -26,12 +26,17 @@
         }
     }
 
-    .center-content {
-        height: 70px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .content-bettwen {
+        padding: 0;
+
+        .center-content {
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
     }
+
 
     .right-content {
         height: 70px;

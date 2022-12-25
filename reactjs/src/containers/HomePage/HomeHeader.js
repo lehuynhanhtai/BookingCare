@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './HomeHeader.scss'
+import './HomeHeader.scss';
 import '../../styles/responsive.scss'
 import { FormattedMessage } from 'react-intl';
 import { LANGUAGES } from '../../utils';
@@ -36,7 +36,7 @@ class HomeHeader extends Component
                                     <div className='header-logo' onClick={() => this.returnToHome()}></div>
                                 </div>
                             </div>
-                            <div className='col-7'>
+                            <div className='content-bettwen col-7'>
                                 <div className='center-content'>
                                     <div className='child-content'>
                                         <div className='center-title'><b><FormattedMessage id="homeheader.speciality" /></b></div>
